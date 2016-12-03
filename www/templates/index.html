@@ -14,5 +14,16 @@
 
         <!-- Add your site or application content here -->
         <h1>Team Directory</h1>
+
+        <ul>
+            {% for person in persons %}
+            <li>
+                <img src="{{ person.image }}" width="300" height="300" alt="{{ person.name }}">
+                <p>{{ person.name }}</p>
+                <p>{{ person.title }}</p>
+                <p>{{ person.email }}</p>
+            </li>
+            {% endfor %}
+        </ul>
     </body>
 </html>

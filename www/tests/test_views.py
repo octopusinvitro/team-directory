@@ -1,7 +1,7 @@
-from django.test import Client, SimpleTestCase
+from django.test import Client, TestCase
 
 
-class HomeTest(SimpleTestCase):
+class HomeTest(TestCase):
     def setUp(self):
         self.client = Client()
 
