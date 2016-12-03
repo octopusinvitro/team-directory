@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!doctype html>
 <html lang="">
     <head>
@@ -6,24 +8,35 @@
         <title>Team Directory</title>
         <meta name="description" content="Shows a list of team members">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <h1>Team Directory</h1>
+        <main class="container">
+            <header class="site-header">
+              <h1>Team Directory</h1>
+            </header>
 
-        <ul>
-            {% for person in persons %}
-            <li>
-                <img src="{{ person.image }}" width="300" height="300" alt="{{ person.name }}">
-                <p>{{ person.name }}</p>
-                <p>{{ person.title }}</p>
-                <p>{{ person.email }}</p>
-            </li>
-            {% endfor %}
-        </ul>
+            <article class="person-grid">
+                {% for person in persons %}
+                <section class="person-item">
+                    <img src="{{ person.image }}" width="300" height="300" alt="{{ person.name }}">
+                    <h2>{{ person.name }}</h2>
+                    <h3>{{ person.title }}</h3>
+                    <p><a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
+                </section>
+                {% endfor %}
+            </article>
+
+            <footer class="site-footer">
+              <p>Team directory</p>
+            </footer>
+        <main>
     </body>
 </html>
