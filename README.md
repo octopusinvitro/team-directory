@@ -4,6 +4,10 @@
 
 # Team directory
 
+![Screenshot](screenshot.png)
+
+A project to play with Django pagination.
+
 This app uses Python 3.4 and Django 1.10.3
 
 
