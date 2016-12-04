@@ -23,6 +23,8 @@
               <h1>Team Directory</h1>
             </header>
 
+            <p style="text-align:center">Page {{ current_page.number }} of {{ current_page.paginator.num_pages }}.</p>
+
             <article class="person-grid">
                 {% for person in persons %}
                 <section class="person-item">
