@@ -2,7 +2,7 @@ from django.test import Client, TestCase
 from www.models import Person
 
 
-class ListPersonsTest(TestCase):
+class PersonsListTest(TestCase):
     def setUp(self):
         self.client = Client()
         Person.objects.create(
