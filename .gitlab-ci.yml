@@ -1,0 +1,15 @@
+image: python:3.4
+
+all_tests:
+  script:
+   - pip install -U pip
+   - pip install -r requirements.txt
+   - pip install flake8
+   - pip freeze
+   - python3 manage.py makemigrations
+   - python3 manage.py migrate
+   - python3 manage.py test
+   - flake8 --ignore E221,E501,F401 .
+  when: on_success
+  only:
+    - dev

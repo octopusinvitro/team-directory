@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/octopusinvitro/team-directory.svg?branch=master)](https://travis-ci.org/octopusinvitro/team-directory)
+[![build status](https://gitlab.com/octopusinvitro/team-directory/badges/master/build.svg)](https://gitlab.com/octopusinvitro/team-directory/commits/master)
+
+
 # Team directory
 
 This app uses Python 3.4 and Django 1.10.3

@@ -1,0 +1,19 @@
+language: python
+cache: pip
+
+python:
+  - "3.4"
+
+install:
+  - pip install -U pip
+  - pip install -r requirements.txt
+  - pip install flake8
+  - pip freeze
+
+before_script:
+  - python3 manage.py makemigrations
+  - python3 manage.py migrate
+
+script:
+  - python3 manage.py test
+  - flake8 --ignore E221,E501,F401 *.py
