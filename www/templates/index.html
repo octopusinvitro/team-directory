@@ -26,7 +26,7 @@
             <p style="text-align:center">Page {{ current_page.number }} of {{ current_page.paginator.num_pages }}.</p>
 
             <article class="person-grid">
-                {% for person in persons %}
+                {% for person in current_page %}
                 <section class="person-item">
                     <img src="{{ person.image }}" width="300" height="300" alt="{{ person.name }}">
                     <h2>{{ person.name }}</h2>
@@ -35,6 +35,26 @@
                 </section>
                 {% endfor %}
             </article>
+
+            <nav class="pagination">
+                <ul class="page-links">
+                    {% if current_page.has_previous %}
+                    <li class="nopagenumber"><a href="/{{ current_page.previous_page_number }}/">previous</a></li>
+                    {% endif %}
+
+                    {% for i in current_page.paginator.page_range %}
+                        {% if current_page.number == i %}
+                    <li class="pagenumber"><span class="active">{{ i }}<span class="visuallyhidden"> (current)</span></span></li>
+                        {% else %}
+                    <li class="pagenumber"><a href="/{{ i }}/">{{ i }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if current_page.has_next %}
+                    <li class="nopagenumber"><a href="/{{ current_page.next_page_number }}/">next</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
 
             <footer class="site-footer">
               <p>Team directory</p>

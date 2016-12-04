@@ -173,6 +173,46 @@ a {
 
 
 /* ==========================================================================
+   Pagination
+   ========================================================================== */
+
+.pagination {
+  text-align: center;
+}
+
+.page-links {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.pagenumber,
+.nopagenumber {
+  display: inline-block;
+  margin: 1em .2em;
+}
+
+.page-links .active,
+.page-links a:hover {
+  color: #fff;
+  background-color: #F44336;
+}
+
+.page-links a,
+.page-links span {
+  box-sizing: border-box;
+  display: block;
+  min-width: 3em;
+  min-height: 3em;
+  line-height: 3em;
+  padding: 0 1em;
+  border-radius: .3em;
+  border: 1px solid #F44336;
+  transition: color .4s, background-color .4s;
+}
+
+
+/* ==========================================================================
    Helper classes
    ========================================================================== */
 
