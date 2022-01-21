@@ -1,4 +1,4 @@
-Django==2.2.24
+Django==2.2.26
 Pygments==2.7.4
 beautifulsoup4==4.5.1
 decorator==4.0.10
